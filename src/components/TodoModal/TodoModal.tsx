@@ -1,16 +1,14 @@
 import React from 'react';
 import { Loader } from '../Loader';
-import { useSelector } from 'react-redux';
+import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import { RootState } from '../../app/store';
-import { clearCurrentTodo } from '../../features/currentTodo';
-import { setCurrentTodo } from '../../features/currentTodo';
+import { clearCurrentTodo, setCurrentTodo } from '../../features/currentTodo';
 import { getUser } from '../../api';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useAppDispatch } from '../../app/hooks';
 
 export const TodoModal: React.FC = () => {
-  const currentTodo = useSelector((state: RootState) => state.currentTodo);
+  const currentTodo = useAppSelector((state: RootState) => state.currentTodo);
   const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(false);
 
