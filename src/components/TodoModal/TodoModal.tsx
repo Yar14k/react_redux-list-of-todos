@@ -22,6 +22,10 @@ export const TodoModal: React.FC = () => {
       });
     }
   }, [currentTodo, dispatch]);
+  
+  if (!currentTodo) {
+    return null;
+  }
 
   return (
     <div className={`modal ${currentTodo ? 'is-active' : ''}`} data-cy="modal">

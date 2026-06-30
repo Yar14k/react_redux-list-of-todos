@@ -38,7 +38,7 @@ export const TodoList: React.FC = () => {
 
             <th>
               <span className="icon">
-                <i className="fas fa-check" data-cy="completedIcon" />
+                <i className="fas fa-check" data-cy="iconCompleted" />
               </span>
             </th>
 
@@ -55,7 +55,7 @@ export const TodoList: React.FC = () => {
               <td className="is-vcentered">
                 {todo.completed && (
                   <span className="icon">
-                    <i className="fas fa-check" data-cy="completedIcon" />
+                    <i className="fas fa-check" data-cy="iconCompleted" />
                   </span>
                 )}
               </td>
