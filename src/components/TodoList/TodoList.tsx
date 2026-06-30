@@ -1,13 +1,13 @@
 /* eslint-disable */
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Todo } from '../../types/Todo';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from '../../app/hooks';
 import { RootState } from '../../app/store';
 import { setCurrentTodo } from '../../features/currentTodo';
 
 export const TodoList: React.FC = () => {
-  const dispatch = useDispatch();
-  const todos = useSelector((state: { todos: Todo[] }) => state.todos);
+  const dispatch = useAppDispatch();
+  const todos = useSelector((state: RootState) => state.todos);
   const filter = useSelector((state: RootState) => state.filter);
   const filteredTodos = todos.filter(todo => {
     const matchedQuery = todo.title

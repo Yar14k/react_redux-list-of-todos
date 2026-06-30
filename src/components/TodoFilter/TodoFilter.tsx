@@ -1,10 +1,11 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
 import { setStatusFilter, setFilterQuery } from '../../features/filter';
+import { useAppDispatch } from '../../app/hooks';
 
 export const TodoFilter: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const filter = useSelector((state: RootState) => state.filter);
 
   return (

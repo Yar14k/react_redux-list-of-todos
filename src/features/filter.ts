@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { PayloadAction } from '@reduxjs/toolkit';
+import { Status } from '../types/Status';
 
 export type FilterState = {
   query: string;
-  status: 'all' | 'active' | 'completed';
+  status: Status;
 };
 
 const initialState: FilterState = {
@@ -21,7 +22,7 @@ export const filterTodoSlice = createSlice({
     },
     setStatusFilter: (
       state,
-      action: PayloadAction<'all' | 'active' | 'completed'>,
+      action: PayloadAction<Status>,
     ) => {
       // eslint-disable-next-line no-param-reassign
       state.status = action.payload;
