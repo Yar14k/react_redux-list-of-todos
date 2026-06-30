@@ -32,3 +32,4 @@ export const filterTodoSlice = createSlice({
 export const { setFilterQuery, setStatusFilter } = filterTodoSlice.actions;
 
 export default filterTodoSlice.reducer;
+
